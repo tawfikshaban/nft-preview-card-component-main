@@ -8,11 +8,13 @@ body {
     flex-direction: column;
     height: 100vh;
 }
+
 * {
     text-decoration: none;
     margin: 0;
     padding: 0;
 }
+
 .card {
     width: 400px;
     padding: 20px;
@@ -21,9 +23,11 @@ body {
     font-weight: 600;
     box-shadow: 0 0 32px 1px hsl(216, 50%, 16%);
 }
+
 .card::before {
     content: "";
 }
+
 @media (max-width:768px) {
     body {
         align-items: center;
@@ -44,8 +48,10 @@ body {
 .card .image {
     width: 100%;
     position: relative;
+    transition: 0.3s;
 
 }
+
 .card .image::before {
     content: "";
     position: absolute;
@@ -57,6 +63,7 @@ body {
     transition: 0.3s;
     border-radius: 10px;
 }
+/* 
 .card .image::after {
     content: "\f06e";
     font-family: "font awesome 6 free";
@@ -71,14 +78,16 @@ body {
     transition: 0.3s;
     z-index: 2;
 }
+
 .card .image:hover:after {
     opacity: 1;
-}
+} */
+
 .card .image:hover::before {
     background-color: hsl(178, 100%, 50%);
     opacity: 0.6;
     cursor: pointer;
-    
+
 }
 
 .card p {
@@ -103,20 +112,7 @@ body {
     padding: 20px 0;
     border-bottom: 1px solid hsl(215, 32%, 27%);
 }
-.card .clock {
-    position:relative;
 
-}
-.card .clock::before{
-    content: "\f017";
-    font-family: "font awesome 5 free";
-    font-weight: 900;
-    position: absolute;
-    left: -25px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 18px;
-}
 footer {
     padding: 10px 0 0;
     display: flex;
@@ -130,9 +126,26 @@ footer img {
     border-radius: 50%;
     border: 1px solid white;
 }
+
 footer a {
     color: white;
 }
+
 footer a:hover {
     color: hsl(178, 100%, 50%);
 }
+
+.svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+.image:hover .svg path {
+    transition: fill 0.4s linear;
+}
+.image:hover  .svg  {
+    display: block;
+    z-index: 1;
+} 
