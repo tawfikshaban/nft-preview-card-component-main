@@ -1,0 +1,138 @@
+body {
+    background-color: hsl(217, 54%, 11%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100vh;
+}
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+.card {
+    width: 400px;
+    padding: 20px;
+    background-color: hsl(216, 50%, 16%);
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: 0 0 32px 1px hsl(216, 50%, 16%);
+}
+.card::before {
+    content: "";
+}
+@media (max-width:768px) {
+    body {
+        align-items: center;
+    }
+
+    .card {
+        width: 350px;
+        margin: 0 auto;
+    }
+}
+
+.card .image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+
+.card .image {
+    width: 100%;
+    position: relative;
+
+}
+.card .image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% + -5px);
+    z-index: 1;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+.card .image::after {
+    content: "\f06e";
+    font-family: "font awesome 6 free";
+    font-weight: 900;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    font-size: 60px;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+    z-index: 2;
+}
+.card .image:hover:after {
+    opacity: 1;
+}
+.card .image:hover::before {
+    background-color: hsl(178, 100%, 50%);
+    opacity: 0.6;
+    cursor: pointer;
+    
+}
+
+.card p {
+    color: hsl(215, 51%, 70%);
+    padding: 20px 0 0;
+}
+
+.card h2 {
+    width: fit-content;
+    padding: 20px 0 0;
+}
+
+.card h2:hover {
+    cursor: pointer;
+    color: hsl(178, 100%, 50%);
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid hsl(215, 32%, 27%);
+}
+.card .clock {
+    position:relative;
+
+}
+.card .clock::before{
+    content: "\f017";
+    font-family: "font awesome 5 free";
+    font-weight: 900;
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+}
+footer {
+    padding: 10px 0 0;
+    display: flex;
+    align-items: center;
+}
+
+footer img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+footer a {
+    color: white;
+}
+footer a:hover {
+    color: hsl(178, 100%, 50%);
+}
